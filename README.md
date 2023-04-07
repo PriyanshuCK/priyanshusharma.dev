@@ -1,2 +1,3 @@
 # priyanshusharma.dev
- Sharing my learnings, happenings, beliefs, and thoughts throught this website.
+
+Sharing my learnings, happenings, beliefs, and thoughts throught this website.
