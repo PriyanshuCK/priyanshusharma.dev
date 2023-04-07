@@ -3,7 +3,7 @@ import { ThemeProvider } from "next-themes";
 import { useState, useCallback } from "react";
 import Header from "@/ui/header";
 
-export default function ThemeWrapper({
+export default function LayoutWrapper({
   children,
 }: {
   children: React.ReactNode;
@@ -16,7 +16,9 @@ export default function ThemeWrapper({
     <ThemeProvider attribute="class" defaultTheme="system">
       <div className={`${color && `theme-${color}`}`}>
         <Header getColor={getColor} />
-        {children}
+        <div className="mt-20 sm:mt-[100px] mx-auto max-w-full px-4 sm:px-6">
+          {children}
+        </div>
       </div>
     </ThemeProvider>
   );
