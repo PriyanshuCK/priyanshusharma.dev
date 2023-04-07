@@ -326,16 +326,15 @@ export default function Header(props: any) {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <Popover.Panel className="fixed inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
+            <Popover.Panel
+              className={`fixed inset-x-0 origin-top-right transform p-2 transition-all duration-300 md:hidden ${
+                scrollDirection === "down" ? "top-0" : "top-14"
+              }`}
+            >
               <div className="divide-y-2 divide-slate-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 dark:divide-slate-800 dark:bg-slate-900 dark:ring-slate-800">
                 <div className="px-5 pt-5 pb-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <Link href="/" aria-label="Priyanshu Sharma">
-                        <Icon />
-                      </Link>
-                    </div>
-                    <div className="-mr-2">
+                  <div className="flex flex-row-reverse">
+                    <div className="-mb-4">
                       <Popover.Button className="inline-flex scale-[0.8] items-center justify-center rounded-full border border-primary-400 p-2 text-primary-400 transition-all duration-300 hover:bg-primary-400 hover:text-white focus:outline-none dark:border-primary-300 dark:text-primary-300 dark:hover:border-slate-500 dark:hover:bg-slate-500 dark:hover:text-primary-400">
                         <span className="sr-only">Close menu</span>
                         <XMarkIcon className="h-6 w-6" aria-hidden="true" />

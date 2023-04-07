@@ -89,7 +89,7 @@ const ColorSwitch = (props: any) => {
               leaveTo="opacity-0 scale-95"
             >
               <Popover.Panel
-                className={`fixed right-0 z-10 origin-top-right transform p-2 max-w-md rounded-lg ${
+                className={`fixed right-0 z-10 origin-top-right transform p-2 max-w-md rounded-lg transition-all duration-300 ${
                   scrollDirection === "down" ? "top-24" : "top-14"
                 }`}
               >
