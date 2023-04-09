@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Richtext from "@/ui/rich-text";
-export default function Listposts(props: any) {
+import Richtext from "@/components/rich-text";
+const Listposts = (props: any) => {
   const posts = props.posts;
   return (
     <>
@@ -85,4 +85,5 @@ export default function Listposts(props: any) {
       </ul>
     </>
   );
-}
+};
+export default Listposts;

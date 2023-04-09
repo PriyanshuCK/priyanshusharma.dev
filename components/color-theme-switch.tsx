@@ -3,7 +3,7 @@
 import { useEffect, useState, Fragment } from "react";
 import { Popover, Transition, RadioGroup } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import ThemeSwitch from "@/ui/dark-theme-switch";
+import ThemeSwitch from "@/components/dark-theme-switch";
 import Link from "next/link";
 import Icon from "./icon";
 

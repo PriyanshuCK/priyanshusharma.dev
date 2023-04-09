@@ -9,8 +9,8 @@ import {
   NewspaperIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import Icon from "@/ui/icon";
-import ColorSwitch from "@/ui/color-theme-switch";
+import Icon from "@/components/icon";
+import ColorSwitch from "@/components/color-theme-switch";
 import navLinks from "@/data/nav-links";
 
 function classNames(...classes: any[]) {
@@ -43,7 +43,7 @@ function useScrollDirection() {
   return scrollDirection;
 }
 
-export default function Header(props: any) {
+const Header = (props: any) => {
   const [isShowing1, setIsShowing1] = useState(false);
   const [isShowing2, setIsShowing2] = useState(false);
   const [isShowing3, setIsShowing3] = useState(false);
@@ -409,4 +409,6 @@ export default function Header(props: any) {
       </Popover>
     </>
   );
-}
+};
+
+export default Header;

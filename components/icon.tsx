@@ -1,4 +1,4 @@
-export default function Icon() {
+const Icon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -57,4 +57,5 @@ export default function Icon() {
       </defs>
     </svg>
   );
-}
+};
+export default Icon;

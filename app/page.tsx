@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client";
-import Listposts from "@/ui/list-posts";
+import Listposts from "@/components/list-posts";
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DB_LIBRARY_ID;
@@ -13,25 +13,17 @@ async function getPosts() {
 
 export default async function Home() {
   const data = await getPosts();
-  const articles = data.results.filter((post) => {
-    if ("properties" in post) {
-      return post.properties.type.select.name === "Articles";
-    }
+  const articles = data.results.filter((post: any) => {
+    return post.properties.type.select.name === "Articles";
   });
-  const blog = data.results.filter((post) => {
-    if ("properties" in post) {
-      return post.properties.type.select.name === "Blog";
-    }
+  const blog = data.results.filter((post: any) => {
+    return post.properties.type.select.name === "Blog";
   });
-  const notes = data.results.filter((post) => {
-    if ("properties" in post) {
-      return post.properties.type.select.name === "Notes";
-    }
+  const notes = data.results.filter((post: any) => {
+    return post.properties.type.select.name === "Notes";
   });
-  const posts = data.results.filter((post) => {
-    if ("properties" in post) {
-      return post.properties.type.select.name != "Essentials";
-    }
+  const posts = data.results.filter((post: any) => {
+    return post.properties.type.select.name != "Essentials";
   });
   const indexPosts = posts.slice(0, 3);
   const types = [indexPosts, articles, blog, notes];

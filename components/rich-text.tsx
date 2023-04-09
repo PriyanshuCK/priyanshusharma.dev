@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Richtext(props: any) {
+const Richtext = (props: any) => {
   const text = props.text;
   const id = props.id;
   if (!text) {
@@ -44,4 +44,6 @@ export default function Richtext(props: any) {
       </span>
     );
   });
-}
+};
+
+export default Richtext;

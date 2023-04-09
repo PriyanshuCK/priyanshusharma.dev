@@ -1,13 +1,9 @@
 "use client";
 import { ThemeProvider } from "next-themes";
 import { useState, useCallback } from "react";
-import Header from "@/ui/header";
+import Header from "@/components/header";
 
-export default function LayoutWrapper({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   const [color, setColor] = useState("slate");
   const getColor = useCallback((newColor: string) => {
     setColor(newColor);
@@ -22,4 +18,5 @@ export default function LayoutWrapper({
       </div>
     </ThemeProvider>
   );
-}
+};
+export default LayoutWrapper;
