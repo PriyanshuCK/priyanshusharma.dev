@@ -1,7 +1,8 @@
 "use client";
 import { ThemeProvider } from "next-themes";
 import { useState, useCallback } from "react";
-import Header from "@/components/header";
+import Header from "@/ui/header";
+import Footer from "@/ui/footer";
 
 const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   const [color, setColor] = useState("slate");
@@ -15,6 +16,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
         <div className="mt-20 sm:mt-[100px] mx-auto max-w-full px-4 sm:px-6">
           {children}
         </div>
+        <Footer />
       </div>
     </ThemeProvider>
   );

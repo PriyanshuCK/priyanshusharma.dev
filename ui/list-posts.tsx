@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Richtext from "@/components/rich-text";
+import Richtext from "@/ui/rich-text";
 const Listposts = (props: any) => {
   const posts = props.posts;
   return (

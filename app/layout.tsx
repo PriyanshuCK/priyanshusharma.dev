@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import LayoutWrapper from "@/components/layout-wrapper";
+import LayoutWrapper from "@/ui/layout-wrapper";
 import siteMetadata from "@/data/metadata";
 import Analytics from "@/scripts/analytics";
 

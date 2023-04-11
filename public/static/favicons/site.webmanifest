@@ -113,7 +113,7 @@
     {
       "name": "Book Notes",
       "short_name": "Notes",
-      "description": "Personally crafted notes of the non-fiction books I've read.",
+      "description": "Summary and takeaways of the non-fiction books I've read.",
       "url": "/notes",
       "icons": [
         { "src": "/static/favicons/icon-192x192.png", "sizes": "192x192" }
@@ -122,7 +122,7 @@
     {
       "name": "Journal",
       "short_name": "Journal",
-      "description": "An informal catalog of what I learn, do & observe each day.",
+      "description": "An informal catalog of what I learn, do & observe everyday.",
       "url": "/journal",
       "icons": [
         { "src": "/static/favicons/icon-192x192.png", "sizes": "192x192" }

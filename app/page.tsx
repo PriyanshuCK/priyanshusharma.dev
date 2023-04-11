@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client";
-import Listposts from "@/components/list-posts";
+import Listposts from "@/ui/list-posts";
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DB_LIBRARY_ID;

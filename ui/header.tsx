@@ -9,8 +9,8 @@ import {
   NewspaperIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import Icon from "@/components/icon";
-import ColorSwitch from "@/components/color-theme-switch";
+import Icon from "@/ui/icon";
+import ColorSwitch from "@/ui/color-theme-switch";
 import navLinks from "@/data/nav-links";
 
 function classNames(...classes: any[]) {

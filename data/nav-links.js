@@ -24,7 +24,7 @@ const navLinks = {
     {
       name: "Journal",
       description:
-        "An informal catalog of what I learn, do & observe each day.",
+        "An informal catalog of what I learn, do & observe everyday.",
       href: "/journal",
       icon: PencilSquareIcon,
       type: ["blog", "journal"],
@@ -40,8 +40,7 @@ const navLinks = {
     },
     {
       name: "Book Notes",
-      description:
-        "Personally crafted notes of the non-fiction books I've read.",
+      description: "Summary and takeaways of the non-fiction books I've read.",
       href: "/notes",
       icon: BookOpenIcon,
       type: ["articles", "notes"],
