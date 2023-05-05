@@ -4,6 +4,8 @@ import Listposts from "@/ui/list-posts";
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DB_LIBRARY_ID;
 
+export const revalidate = 10;
+
 async function getPosts() {
   const response = await notion.databases.query({
     database_id: databaseId as string,
@@ -23,7 +25,10 @@ export default async function Home() {
     return post.properties.type.select.name === "Notes";
   });
   const posts = data.results.filter((post: any) => {
-    return post.properties.type.select.name != "Essentials";
+    return (
+      post.properties.type.select.name != "Essentials" &&
+      post.properties.type.select.name != "Journal"
+    );
   });
   const indexPosts = posts.slice(0, 3);
   const types = [indexPosts, articles, blog, notes];
