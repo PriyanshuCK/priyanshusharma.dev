@@ -11,6 +11,7 @@ import Toggle from "@/ui/blocks/Toggle";
 import Code from "@/ui/blocks/Code";
 import ImageBlock from "@/ui/blocks/Image";
 import Divider from "@/ui/blocks/Divider";
+import EmbededImageBlock from "@/ui/blocks/Embed";
 
 export default function Renderblock(props: any): JSX.Element {
   const { type, id } = props.block;
@@ -122,6 +123,8 @@ export default function Renderblock(props: any): JSX.Element {
       return <div>{value.expression}</div>;
     case "divider":
       return <Divider />;
+    case "embed":
+      return <EmbededImageBlock src={value.url} />;
     default:
       return (
         <>
