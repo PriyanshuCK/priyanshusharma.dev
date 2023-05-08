@@ -12,6 +12,8 @@ import Code from "@/ui/blocks/Code";
 import ImageBlock from "@/ui/blocks/Image";
 import Divider from "@/ui/blocks/Divider";
 import EmbededImageBlock from "@/ui/blocks/Embed";
+import { Suspense } from "react";
+import LoadingImage from "./loading-image";
 
 export default function Renderblock(props: any): JSX.Element {
   const { type, id } = props.block;
@@ -124,7 +126,13 @@ export default function Renderblock(props: any): JSX.Element {
     case "divider":
       return <Divider />;
     case "embed":
-      return <EmbededImageBlock src={value.url} />;
+      return (
+        <>
+          <Suspense fallback={<LoadingImage />}>
+            <EmbededImageBlock src={value.url} />
+          </Suspense>
+        </>
+      );
     default:
       return (
         <>
