@@ -1,7 +1,7 @@
 export default function EmbededImageBlock({ src }) {
   return (
     <div className="flex justify-center">
-      <figure className="my-3 flex max-w-md flex-col items-center">
+      <div className="not-prose flex max-w-md flex-col items-center">
         <picture>
           <img
             src={src}
@@ -9,7 +9,7 @@ export default function EmbededImageBlock({ src }) {
             className="mb-[2px] max-h-80 rounded-lg shadow-lg"
           />
         </picture>
-      </figure>
+      </div>
     </div>
   );
 }
