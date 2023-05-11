@@ -14,7 +14,7 @@ const siteMetadata = {
   github: "https://github.com/PriyanshuCK",
   twitter: "https://twitter.com/PriyanshuCK",
   linkedin: "https://www.linkedin.com/in/PriyanshuCK",
-  locale: "en-US",
+  locale: "en-IN",
   analytics: {
     googleAnalyticsId: "G-ZX0NW47J11",
   },

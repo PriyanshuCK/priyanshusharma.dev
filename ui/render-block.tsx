@@ -13,7 +13,7 @@ import ImageBlock from "@/ui/blocks/Image";
 import Divider from "@/ui/blocks/Divider";
 import EmbededImageBlock from "@/ui/blocks/Embed";
 import { Suspense } from "react";
-import LoadingImage from "./loading-image";
+import LoadingImage from "@/ui/loading-image";
 
 export default function Renderblock(props: any): JSX.Element {
   const { type, id } = props.block;
