@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "data/nav-links.js"
+    "data/nav-links.js",
+    "app/(library)/newsletter"
   ],
   "exclude": ["node_modules"]
 }
