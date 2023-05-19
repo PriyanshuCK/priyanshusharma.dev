@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Link from "next/link";
 import Renderblock from "@/ui/render-block";
 import Richtext from "@/ui/rich-text";
 export default function Heading3({
@@ -24,8 +25,10 @@ export default function Heading3({
           </details>
         </div>
       ) : (
-        <h3>
-          <Richtext text={rich_text} id={id} color={color} />
+        <h3 className="mt-6 mb-4" id={id}>
+          <Link href={`#${id}`} className="!font-semibold">
+            <Richtext text={rich_text} id={id} color={color} />
+          </Link>
         </h3>
       )}
     </>
