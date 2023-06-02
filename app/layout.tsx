@@ -18,12 +18,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth light ${inter.className}`}
+      className="scroll-smooth light"
       style={{ colorScheme: "light" }}
     >
-      <Analytics />
-      {/* @ts-expect-error Server Component */}
-      <AppWrapper>{children}</AppWrapper>
+      <body className="selection:bg-primary-200 selection:text-primary-900 antialiased text-slate-700 dark:text-slate-400 bg-white dark:bg-slate-900">
+        <main className={inter.className}>
+          <Analytics />
+          {/* @ts-expect-error Server Component */}
+          <AppWrapper>{children}</AppWrapper>
+        </main>
+      </body>
     </html>
   );
 }

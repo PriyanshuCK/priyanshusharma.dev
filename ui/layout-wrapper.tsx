@@ -1,6 +1,6 @@
 "use client";
 import { ThemeProvider } from "next-themes";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Header from "@/ui/header";
 import Footer from "@/ui/footer";
 
@@ -15,19 +15,28 @@ const LayoutWrapper: React.FC<IntrinsicAttributesAndPosts> = (props) => {
   const getColor = useCallback((newColor: string) => {
     setColor(newColor);
   }, []);
+  const [themeClassName, setThemeClassName] = useState("");
+
+  useEffect(() => {
+    const themeDiv: any = document.getElementById("theme");
+    const themeClassName = themeDiv.className;
+    setThemeClassName(themeClassName);
+
+    document.body.className = themeClassName;
+
+    return () => {
+      document.body.className = "";
+    };
+  }, [color]);
   return (
     <ThemeProvider attribute="class" defaultTheme="system">
-      <body
-        className={`selection:bg-primary-200 selection:text-primary-900 antialiased text-slate-700 dark:text-slate-400 bg-white dark:bg-slate-900 ${
-          color && `theme-${color}`
-        }`}
-      >
+      <div className={`${color && `theme-${color}`}`} id="theme">
         <Header getColor={getColor} posts={posts} />
         <div className="mt-20 sm:mt-[100px] mx-auto max-w-full px-4 sm:px-6">
           {children}
         </div>
         <Footer />
-      </body>
+      </div>
     </ThemeProvider>
   );
 };
