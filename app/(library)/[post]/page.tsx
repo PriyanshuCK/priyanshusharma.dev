@@ -4,6 +4,7 @@ import {
   retrieveBlocks,
   retrieveId,
 } from "@/data/api";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import siteMetadata from "@/data/metadata";
 import { Fragment } from "react";
@@ -86,7 +87,7 @@ export default async function Post({ params }: { params: { post: string } }) {
                   Published:&nbsp;
                   <time dateTime={page.created_time}>
                     {new Date(page.created_time).toLocaleString(
-                      siteMetadata.locale,
+                      "en-IN",
                       postTimeTemplate
                     )}
                   </time>
@@ -95,7 +96,7 @@ export default async function Post({ params }: { params: { post: string } }) {
                   Last edited:&nbsp;
                   <time dateTime={page.last_edited_time}>
                     {new Date(page.last_edited_time).toLocaleString(
-                      siteMetadata.locale,
+                      "en-IN",
                       postTimeTemplate
                     )}
                   </time>
@@ -137,4 +138,48 @@ async function getBlocks(id: string) {
     return block;
   });
   return blocksWithChildren;
+}
+
+export async function generateMetadata(params: {
+  params: { post: string };
+}): Promise<Metadata> {
+  const id = params.params.post;
+  const page = (await getPage(id)) as any;
+  const title: string =
+    page.properties.name.title[0].text.content +
+    " | " +
+    page.properties.type.select.name;
+  const description: string =
+    page.properties.description.rich_text[0].text.content;
+
+  return {
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      url: siteMetadata.siteUrl + id,
+      siteName: siteMetadata.title,
+      images: [
+        {
+          url: siteMetadata.socialBanner,
+          width: 1200,
+          height: 600,
+        },
+      ],
+      locale: siteMetadata.locale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      site: siteMetadata.twitter,
+      images: [{ url: siteMetadata.socialBanner }],
+    },
+    other: {
+      published_time: page.created_time,
+      modified_time: page.created_time,
+    },
+  };
 }

@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./prism.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import LayoutWrapper from "@/ui/layout-wrapper";
@@ -15,7 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html
+      lang="en"
+      className="scroll-smooth light"
+      style={{ colorScheme: "light" }}
+    >
       <body className="selection:bg-primary-200 selection:text-primary-900 antialiased text-slate-700 dark:text-slate-400 bg-white dark:bg-slate-900">
         <main className={inter.className}>
           <Analytics />

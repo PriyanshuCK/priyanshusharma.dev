@@ -1,5 +1,7 @@
 import { Client } from "@notionhq/client";
 import ListLayout from "@/ui/list-layout";
+import { Metadata } from "next";
+import siteMetadata from "@/data/metadata";
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DB_LIBRARY_ID;
@@ -28,3 +30,32 @@ export default async function Blog() {
     </>
   );
 }
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "A detailed account of my happenings, activities, beliefs, and thoughts",
+  openGraph: {
+    title: "Blog",
+    description:
+      "A detailed account of my happenings, activities, beliefs, and thoughts",
+    url: siteMetadata.siteUrl + "blog",
+    siteName: siteMetadata.title,
+    images: [
+      {
+        url: siteMetadata.socialBanner,
+        width: 1200,
+        height: 600,
+      },
+    ],
+    locale: siteMetadata.locale,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog",
+    description:
+      "A detailed account of my happenings, activities, beliefs, and thoughts",
+    site: siteMetadata.twitter,
+    images: [{ url: siteMetadata.socialBanner }],
+  },
+};

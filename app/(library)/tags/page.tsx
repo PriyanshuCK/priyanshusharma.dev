@@ -1,5 +1,7 @@
 import { Client } from "@notionhq/client";
 import Link from "next/link";
+import { Metadata } from "next";
+import siteMetadata from "@/data/metadata";
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DB_LIBRARY_ID;
@@ -54,3 +56,30 @@ export default async function tags() {
     </>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Tags",
+  description: "Browse posts by tag",
+  openGraph: {
+    title: "Tags",
+    description: "Browse posts by tag",
+    url: siteMetadata.siteUrl + "tags",
+    siteName: siteMetadata.title,
+    images: [
+      {
+        url: siteMetadata.socialBanner,
+        width: 1200,
+        height: 600,
+      },
+    ],
+    locale: siteMetadata.locale,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tags",
+    description: "Browse posts by tag",
+    site: siteMetadata.twitter,
+    images: [{ url: siteMetadata.socialBanner }],
+  },
+};

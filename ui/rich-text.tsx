@@ -8,12 +8,12 @@ const Richtext = (props: any) => {
   }
   return text.map((value: any) => {
     const {
-      annotations: { bold, italic, strikethrough, underline, code, color },
+      annotations: { bold, italic, strikethrough, underline, code },
       text,
     } = value;
     return (
       <span
-        key={id + text.content}
+        key={id + Math.floor(Math.random() * 100) + text.content}
         className={[
           bold ? "font-bold" : "",
           code
@@ -22,13 +22,6 @@ const Richtext = (props: any) => {
           italic ? "italic" : "",
           strikethrough ? "line-through" : "",
           underline ? "underline decoration-primary-500" : "",
-          color !== "default"
-            ? `${
-                color.length < 8
-                  ? `text-${color}Notion`
-                  : `bg-${color.split("_", 1)}Notion`
-              }`
-            : `text-${color}Notion`,
         ].join(" ")}
       >
         {text.link ? (

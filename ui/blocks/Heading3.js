@@ -26,7 +26,7 @@ export default function Heading3({
         </div>
       ) : (
         <h3 className="mt-6 mb-4" id={id}>
-          <Link href={`#${id}`} className="!font-semibold">
+          <Link href={`#${id}`} className="!font-semibold text-inherit">
             <Richtext text={rich_text} id={id} color={color} />
           </Link>
         </h3>
