@@ -7,6 +7,10 @@ import {
   XMarkIcon,
   EnvelopeOpenIcon,
   NewspaperIcon,
+  ChatBubbleBottomCenterTextIcon,
+  BookOpenIcon,
+  PencilSquareIcon,
+  DocumentTextIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Icon from "@/ui/icon";
@@ -348,36 +352,58 @@ const Header = (props: any) => {
                   </div>
                   <div className="mt-6">
                     <nav className="grid gap-y-8">
-                      {navLinks.experiences.map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="-m-3 flex items-center rounded-md p-3 hover:bg-primary-50 dark:hover:bg-slate-800"
-                        >
-                          <item.icon
-                            className="h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-400"
-                            aria-hidden="true"
-                          />
-                          <span className="ml-3 text-base font-medium text-slate-900 dark:text-slate-200">
-                            {item.name}
-                          </span>
-                        </Link>
-                      ))}
-                      {navLinks.learnings.map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="-m-3 flex items-center rounded-md p-3 hover:bg-primary-50 dark:hover:bg-slate-800"
-                        >
-                          <item.icon
-                            className="h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-400"
-                            aria-hidden="true"
-                          />
-                          <span className="ml-3 text-base font-medium text-slate-900 dark:text-slate-200">
-                            {item.name}
-                          </span>
-                        </Link>
-                      ))}
+                      <Link
+                        key="articles"
+                        href="/articles"
+                        className="-m-3 flex items-center rounded-md p-3 hover:bg-primary-50 dark:hover:bg-slate-800"
+                      >
+                        <DocumentTextIcon
+                          className="h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-400"
+                          aria-hidden="true"
+                        />
+                        <span className="ml-3 text-base font-medium text-slate-900 dark:text-slate-200">
+                          Articles
+                        </span>
+                      </Link>
+                      <Link
+                        key="blog"
+                        href="/blog"
+                        className="-m-3 flex items-center rounded-md p-3 hover:bg-primary-50 dark:hover:bg-slate-800"
+                      >
+                        <ChatBubbleBottomCenterTextIcon
+                          className="h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-400"
+                          aria-hidden="true"
+                        />
+                        <span className="ml-3 text-base font-medium text-slate-900 dark:text-slate-200">
+                          Blog
+                        </span>
+                      </Link>
+                      <Link
+                        key="notes"
+                        href="/notes"
+                        className="-m-3 flex items-center rounded-md p-3 hover:bg-primary-50 dark:hover:bg-slate-800"
+                      >
+                        <BookOpenIcon
+                          className="h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-400"
+                          aria-hidden="true"
+                        />
+                        <span className="ml-3 text-base font-medium text-slate-900 dark:text-slate-200">
+                          Book Notes
+                        </span>
+                      </Link>
+                      <Link
+                        key="journal"
+                        href="/journal"
+                        className="-m-3 flex items-center rounded-md p-3 hover:bg-primary-50 dark:hover:bg-slate-800"
+                      >
+                        <PencilSquareIcon
+                          className="h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-400"
+                          aria-hidden="true"
+                        />
+                        <span className="ml-3 text-base font-medium text-slate-900 dark:text-slate-200">
+                          Journal
+                        </span>
+                      </Link>
                       <Link
                         key="newsletter"
                         href="/newsletter"
