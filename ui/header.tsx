@@ -12,6 +12,7 @@ import Link from "next/link";
 import Icon from "@/ui/icon";
 import ColorSwitch from "@/ui/color-theme-switch";
 import navLinks from "@/data/nav-links";
+import CommandPalette from "./command-palette";
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
@@ -60,6 +61,7 @@ const Header = (props: any) => {
     window.addEventListener("scroll", handleWindowScroll);
     return () => window.removeEventListener("scroll", handleWindowScroll);
   }, []);
+  const posts = props.posts;
   return (
     <>
       <Popover>
@@ -82,11 +84,14 @@ const Header = (props: any) => {
                   </div>
                 </Link>
               </div>
-              <div className="flex flex-row space-x-3 justify-center items-center md:items-start md:flex-row-reverse">
-                <ColorSwitch
-                  getColor={props.getColor}
-                  scrollDirection={scrollDirection}
-                />
+              <div className="flex flex-row justify-center items-center md:items-start md:flex-row-reverse">
+                <div className="space-x-1 mr-1 md:mr-0 flex-row flex">
+                  <ColorSwitch
+                    getColor={props.getColor}
+                    scrollDirection={scrollDirection}
+                  />
+                  <CommandPalette posts={posts} />
+                </div>
                 <div className="md:hidden">
                   <Popover.Button className="inline-flex scale-[0.8] items-center justify-center rounded-full border border-primary-400 p-2 text-primary-400 transition-all duration-300 hover:bg-primary-400 hover:text-white focus:outline-none dark:border-primary-300 dark:text-primary-300 dark:hover:border-slate-500 dark:hover:bg-slate-500 dark:hover:text-primary-400">
                     <span className="sr-only">Open menu</span>

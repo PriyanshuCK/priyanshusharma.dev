@@ -2,9 +2,9 @@ import "./globals.css";
 import "./prism.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import LayoutWrapper from "@/ui/layout-wrapper";
 import siteMetadata from "@/data/metadata";
 import Analytics from "@/scripts/analytics";
+import AppWrapper from "@/ui/app-wrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className="selection:bg-primary-200 selection:text-primary-900 antialiased text-slate-700 dark:text-slate-400 bg-white dark:bg-slate-900">
         <main className={inter.className}>
           <Analytics />
-          <LayoutWrapper>{children}</LayoutWrapper>
+          <AppWrapper>{children}</AppWrapper>
         </main>
       </body>
     </html>
