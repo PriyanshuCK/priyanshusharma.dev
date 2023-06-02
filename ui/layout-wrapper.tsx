@@ -22,10 +22,10 @@ const LayoutWrapper: React.FC<IntrinsicAttributesAndPosts> = (props) => {
     const themeClassName = themeDiv.className;
     setThemeClassName(themeClassName);
 
-    document.body.className = themeClassName;
+    document.body.classList.add(themeClassName);
 
     return () => {
-      document.body.className = "";
+      document.body.classList.remove(themeClassName);
     };
   }, [color]);
   return (

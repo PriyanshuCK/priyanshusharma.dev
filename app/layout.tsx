@@ -21,12 +21,12 @@ export default function RootLayout({
       className="scroll-smooth light"
       style={{ colorScheme: "light" }}
     >
-      <body className="selection:bg-primary-200 selection:text-primary-900 antialiased text-slate-700 dark:text-slate-400 bg-white dark:bg-slate-900">
-        <main className={inter.className}>
-          <Analytics />
-          {/* @ts-expect-error Server Component */}
-          <AppWrapper>{children}</AppWrapper>
-        </main>
+      <body
+        className={`selection:bg-primary-200 selection:text-primary-900 antialiased text-slate-700 dark:text-slate-400 bg-white dark:bg-slate-900 ${inter.className}`}
+      >
+        <Analytics />
+        {/* @ts-expect-error Server Component */}
+        <AppWrapper>{children}</AppWrapper>
       </body>
     </html>
   );
