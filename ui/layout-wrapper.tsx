@@ -17,13 +17,17 @@ const LayoutWrapper: React.FC<IntrinsicAttributesAndPosts> = (props) => {
   }, []);
   return (
     <ThemeProvider attribute="class" defaultTheme="system">
-      <div className={`${color && `theme-${color}`}`}>
+      <body
+        className={`selection:bg-primary-200 selection:text-primary-900 antialiased text-slate-700 dark:text-slate-400 bg-white dark:bg-slate-900 ${
+          color && `theme-${color}`
+        }`}
+      >
         <Header getColor={getColor} posts={posts} />
         <div className="mt-20 sm:mt-[100px] mx-auto max-w-full px-4 sm:px-6">
           {children}
         </div>
         <Footer />
-      </div>
+      </body>
     </ThemeProvider>
   );
 };

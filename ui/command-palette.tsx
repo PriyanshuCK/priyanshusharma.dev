@@ -4,7 +4,8 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { useState, useEffect, Fragment } from "react";
 import React from "react";
 import { useRouter } from "next/navigation";
-import formatDate from "../lib/utils/formatDate";
+import formatDate from "@/lib/utils/formatDate";
+import Richtext from "@/ui/rich-text";
 
 export default function CommandPalette(props: any) {
   const posts = props.posts;
@@ -106,28 +107,27 @@ export default function CommandPalette(props: any) {
               {filteredPosts.length > 0 && (
                 <Combobox.Options
                   static
-                  className="max-h-[32rem] space-y-4 overflow-y-auto py-4 text-sm sm:divide-y-0"
+                  className="max-h-[32rem] space-y-4 overflow-y-auto py-4 text-sm"
                 >
                   {filteredPosts.map((post: any) => {
                     return (
                       <Combobox.Option key={post.id} value={post} className="">
                         {({ active }) => (
                           <div
-                            className={`m-4 cursor-pointer space-y-1 rounded-lg border border-gray-100 py-2 px-4
-                             shadow-sm first:mt-0 last:mb-0 dark:border-gray-800 ${
-                               active
-                                 ? "bg-gray-100 dark:bg-gray-800 dark:bg-none dark:text-white"
-                                 : " bg-white dark:bg-gray-900"
-                             }`}
+                            className={`m-4 cursor-pointer space-y-1 rounded-lg py-2 px-4 first:mt-0 last:mb-0 ${
+                              active
+                                ? "bg-primary-50 dark:bg-gray-800 dark:bg-none dark:text-gray-200 text-primary-500"
+                                : " bg-white dark:bg-gray-900"
+                            }`}
                           >
                             <h3 className="text-lg font-medium">
                               {post.properties.name.title[0].text.content}
                             </h3>
-                            <div className="flex flex-row">
-                              <div className="pr-2 text-[0.8125rem] text-gray-600 dark:text-gray-400">
+                            <div className="flex flex-row text-gray-500 dark:text-gray-400">
+                              <div className="pr-2 text-[0.8125rem]">
                                 {post.properties.type.select.name}
                               </div>
-                              <div className="text-[0.8125rem] text-gray-600 dark:text-gray-400">
+                              <div className="text-[0.8125rem]">
                                 <time dateTime={post.created_time}>
                                   {new Date(
                                     post.created_time
@@ -139,11 +139,11 @@ export default function CommandPalette(props: any) {
                                 </time>
                               </div>
                             </div>
-                            <div>
-                              {
-                                post.properties.description.rich_text[0]
-                                  .plain_text
-                              }
+                            <div className="text-sm text-slate-500 dark:text-slate-400">
+                              <Richtext
+                                text={post.properties.description.rich_text}
+                                key={post.id}
+                              />
                             </div>
                           </div>
                         )}

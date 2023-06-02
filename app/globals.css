@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
 @layer base {
   :root {
     --color-gray-50: theme("colors.gray.50");
@@ -253,4 +249,67 @@
   --primary-700: theme("colors.slate.700");
   --primary-800: theme("colors.slate.800");
   --primary-900: theme("colors.slate.900");
+}
+
+.task-list-item::before {
+  @apply hidden;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.footnotes {
+  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+}
+
+.csl-entry {
+  @apply my-5;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem !important;
+  background-color: transparent;
+  height: 0.5rem !important;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem !important;
+  @apply bg-primary-400;
+}
+.dark ::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem !important;
+  @apply bg-gray-600;
+}
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 0.5rem !important;
+  @apply bg-primary-300;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  border-radius: 0.5rem !important;
+  @apply bg-gray-500;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(187, 247, 208);
+  border-radius: 0.5rem !important;
+  @apply bg-primary-200;
+}
+.dark ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(51, 65, 85);
+  border-radius: 0.5rem !important;
+  @apply bg-gray-900;
+}
+@media only screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 0.25rem !important;
+    height: 0.25rem !important;
+  }
 }
