@@ -15,20 +15,23 @@ import Comments from "@/ui/comments";
 
 export const revalidate = 10;
 
-const postDateTemplate = {
+const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: "long",
   year: "numeric",
   month: "long",
   day: "numeric",
-} as any;
-const postTimeTemplate = {
+  timeZone: "Asia/Kolkata",
+};
+const postTimeTemplate: Intl.DateTimeFormatOptions = {
   weekday: "short",
-  year: "numeric",
-  month: "short",
   day: "numeric",
+  month: "short",
+  year: "numeric",
   hour: "numeric",
   minute: "numeric",
-} as any;
+  hour12: true,
+  timeZone: "Asia/Kolkata",
+};
 
 export async function generateStaticParams() {
   const database = await retrieveDatabase();

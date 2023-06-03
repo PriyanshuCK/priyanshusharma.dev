@@ -29,6 +29,7 @@ const Listposts = (props: any) => {
                             year: "numeric",
                             month: "long",
                             day: "numeric",
+                            timeZone: "Asia/Kolkata",
                           }
                         )}
                       </time>
