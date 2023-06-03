@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 
-import withPWAInit from "@ducanh2912/next-pwa";
-
-const withPWA = withPWAInit({
+const withPWA = require("@ducanh2912/next-pwa").default({
   dest: "public",
 });
 
-export default withPWA({
+const nextConfig = withPWA({
   experimental: {
     appDir: true,
   },
 });
+
+module.exports = nextConfig;
