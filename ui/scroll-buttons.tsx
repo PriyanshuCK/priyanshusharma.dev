@@ -1,4 +1,3 @@
-import ScrollButtonsComponent from "@/ui/scroll-button-component";
 import dynamic from "next/dynamic";
 
 const ScrollComponent = dynamic(
@@ -11,7 +10,7 @@ const ScrollComponent = dynamic(
 const ScrollButtons = () => {
   return (
     <>
-      <ScrollButtonsComponent />
+      <ScrollComponent />
     </>
   );
 };
