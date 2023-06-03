@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-export default async function Articles() {
+export default async function Offline() {
   return (
     <>
       <div className="flex flex-col items-start justify-start md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6">
@@ -21,6 +21,6 @@ export default async function Articles() {
   );
 }
 export const metadata: Metadata = {
-  title: "Book Notes",
-  description: "Summary and takeaways of the non-fiction books I've read",
+  title: "You're offline!",
+  description: "You're offline. Please check your connection.",
 };
