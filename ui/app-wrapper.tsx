@@ -24,7 +24,7 @@ export default async function AppWrapper({
   });
   return (
     <>
-      <LayoutWrapper posts={posts}>{children}</LayoutWrapper>;
+      <LayoutWrapper posts={posts}>{children}</LayoutWrapper>
     </>
   );
 }

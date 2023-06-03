@@ -11,6 +11,7 @@ import { Fragment } from "react";
 import Renderblock from "@/ui/render-block";
 import PageTitle from "@/ui/page-title";
 import Richtext from "@/ui/rich-text";
+import Comments from "@/ui/comments";
 
 export const revalidate = 10;
 
@@ -45,6 +46,7 @@ export default async function Post({ params }: { params: { post: string } }) {
     notFound();
   }
   const blocks = (await getBlocks(id)) as any;
+
   return (
     <>
       <article>
@@ -101,7 +103,11 @@ export default async function Post({ params }: { params: { post: string } }) {
                     )}
                   </time>
                 </span>
-                {/* <Comments /> */}
+                {page.properties.type.select.name != "Essentials" && (
+                  <>
+                    <Comments />
+                  </>
+                )}
               </div>
             </div>
           </div>

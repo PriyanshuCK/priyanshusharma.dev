@@ -2,6 +2,7 @@
 import { ThemeProvider } from "next-themes";
 import { useState, useCallback, useEffect } from "react";
 import Header from "@/ui/header";
+import ScrollButtons from "@/ui/scroll-buttons";
 import Footer from "@/ui/footer";
 
 type IntrinsicAttributesAndPosts = {
@@ -35,6 +36,7 @@ const LayoutWrapper: React.FC<IntrinsicAttributesAndPosts> = (props) => {
         <div className="mt-20 sm:mt-[100px] mx-auto max-w-full px-4 sm:px-6">
           {children}
         </div>
+        <ScrollButtons />
         <Footer />
       </div>
     </ThemeProvider>
