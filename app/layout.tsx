@@ -61,6 +61,10 @@ export const metadata: Metadata = {
     site: siteMetadata.twitter,
     images: [{ url: siteMetadata.socialBanner }],
   },
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+  ],
   icons: {
     icon: [
       {
@@ -86,8 +90,8 @@ export const metadata: Metadata = {
   },
   manifest: "/static/favicons/site.webmanifest",
   robots: {
-    index: true,
     follow: true,
+    index: true,
   },
   alternates: {
     canonical: siteMetadata.siteUrl,

@@ -97,36 +97,21 @@
       "short_name": "Articles",
       "description": "Articles delineating some facts, ideas, or thoughts.",
       "url": "/articles",
-      "icons": [
-        { "src": "/static/favicons/icon-192x192.png", "sizes": "192x192" }
-      ]
+      "icons": [{ "src": "/static/favicons/articles.png", "sizes": "192x192" }]
     },
     {
       "name": "Blog",
       "short_name": "Blog",
       "description": "A detailed account of my happenings, activities, beliefs, and thoughts.",
       "url": "/blog",
-      "icons": [
-        { "src": "/static/favicons/icon-192x192.png", "sizes": "192x192" }
-      ]
+      "icons": [{ "src": "/static/favicons/blog.png", "sizes": "192x192" }]
     },
     {
       "name": "Book Notes",
       "short_name": "Notes",
       "description": "Summary and takeaways of the non-fiction books I've read.",
       "url": "/notes",
-      "icons": [
-        { "src": "/static/favicons/icon-192x192.png", "sizes": "192x192" }
-      ]
-    },
-    {
-      "name": "Journal",
-      "short_name": "Journal",
-      "description": "An informal catalog of what I learn, do & observe everyday.",
-      "url": "/journal",
-      "icons": [
-        { "src": "/static/favicons/icon-192x192.png", "sizes": "192x192" }
-      ]
+      "icons": [{ "src": "/static/favicons/notes.png", "sizes": "192x192" }]
     },
     {
       "name": "Thursday Thoughts",
