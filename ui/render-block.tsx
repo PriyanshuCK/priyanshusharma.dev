@@ -136,8 +136,15 @@ export default function Renderblock(props: any): JSX.Element {
     default:
       return (
         <>
-          `Unsupported block ($
-          {type === "unsupported" ? "unsupported by Notion API" : type})`;
+          <div className="hidden" id="Unsupported block">
+            $
+            {type === "unsupported" ? (
+              <span className="unsupported by Notion API" id={type}></span>
+            ) : (
+              <></>
+            )}
+            ;
+          </div>
         </>
       );
   }
