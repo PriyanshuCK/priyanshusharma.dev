@@ -43,7 +43,7 @@ export default async function Home() {
           I&apos;m committed to learn Data Structures & Algorithms in the next
           100 days as part of the{" "}
           <Link href="https://www.100daysofcode.com/">#100DaysOfCode</Link>{" "}
-          challenge and sharing my journey daily on this site.
+          challenge.
         </p>
         <div className="flex flex-row justify-center gap-8 my-4">
           <Link
