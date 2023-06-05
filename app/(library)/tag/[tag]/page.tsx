@@ -2,6 +2,7 @@ import { retrieveDatabase } from "@/data/api";
 import ListLayout from "@/ui/list-layout";
 import { Metadata } from "next";
 import siteMetadata from "@/data/metadata";
+import { notFound } from "next/navigation";
 
 export const revalidate = 10;
 
@@ -33,6 +34,9 @@ export default async function Tag({ params }: { params: { tag: string } }) {
       .map((tag: any) => tag.name.toLowerCase())
       .includes(tag)
   );
+  if (posts.length == 0) {
+    notFound();
+  }
   return (
     <>
       <ListLayout posts={posts} title={`Tag: ${tag}`} typeDescription="" />

@@ -24,7 +24,7 @@ export const retrieveBlocks = async (blockId: string) => {
 
 export const retrieveId = async (slug: string) => {
   const database = (await retrieveDatabase()) as any;
-  let id = "";
+  let id = null;
   for (let i = 0; i < database.length; i++) {
     if (database[i].properties.slug.rich_text[0].plain_text === slug) {
       id = database[i].id;

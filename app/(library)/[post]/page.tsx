@@ -44,12 +44,15 @@ export async function generateStaticParams() {
 
 export default async function Post({ params }: { params: { post: string } }) {
   const id = params.post;
-  const page = (await getPage(id)) as any;
-  if (!page) {
+  const newId = await retrieveId(id);
+  let page: any;
+  let blocks: any;
+  if (newId == null) {
     notFound();
+  } else {
+    page = await getPage(id);
+    blocks = await getBlocks(id);
   }
-  const blocks = (await getBlocks(id)) as any;
-
   return (
     <>
       <article>
@@ -153,13 +156,21 @@ export async function generateMetadata(params: {
   params: { post: string };
 }): Promise<Metadata> {
   const id = params.params.post;
-  const page = (await getPage(id)) as any;
-  const title: string =
-    page.properties.name.title[0].text.content +
-    " | " +
-    page.properties.type.select.name;
-  const description: string =
-    page.properties.description.rich_text[0].text.content;
+  const newId = await retrieveId(id);
+  let title: string = "Page Not Found";
+  let description: string = "Sorry! the page doesn't exist.";
+  let created_time: string = "";
+  let modified_time: string = "";
+  if (newId != null) {
+    const page = (await getPage(id)) as any;
+    title =
+      page.properties.name.title[0].text.content +
+      " | " +
+      page.properties.type.select.name;
+    description = page.properties.description.rich_text[0].text.content;
+    created_time = page.created_time;
+    modified_time = page.last_edited_time;
+  }
 
   return {
     title: title,
@@ -187,8 +198,8 @@ export async function generateMetadata(params: {
       images: [{ url: siteMetadata.socialBanner }],
     },
     other: {
-      published_time: page.created_time,
-      modified_time: page.created_time,
+      published_time: created_time,
+      modified_time: modified_time,
     },
   };
 }
