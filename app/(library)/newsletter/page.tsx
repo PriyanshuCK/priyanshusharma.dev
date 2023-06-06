@@ -42,13 +42,7 @@ export const metadata: Metadata = {
       "Subscribe to my newsletter where I share my learnings and valuable insights from the content I consume.",
     url: siteMetadata.siteUrl + "newsletter",
     siteName: siteMetadata.title,
-    images: [
-      {
-        url: siteMetadata.socialBanner,
-        width: 1200,
-        height: 600,
-      },
-    ],
+
     locale: siteMetadata.locale,
     type: "website",
   },
@@ -58,6 +52,5 @@ export const metadata: Metadata = {
     description:
       "Subscribe to my newsletter where I share my learnings and valuable insights from the content I consume.",
     site: siteMetadata.twitter,
-    images: [{ url: siteMetadata.socialBanner }],
   },
 };

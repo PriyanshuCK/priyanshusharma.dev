@@ -38,13 +38,7 @@ export const metadata: Metadata = {
     description: "Articles delineating some facts, ideas, or thoughts",
     url: siteMetadata.siteUrl + "articles",
     siteName: siteMetadata.title,
-    images: [
-      {
-        url: siteMetadata.socialBanner,
-        width: 1200,
-        height: 600,
-      },
-    ],
+
     locale: siteMetadata.locale,
     type: "website",
   },
@@ -53,6 +47,5 @@ export const metadata: Metadata = {
     title: "Articles",
     description: "Articles delineating some facts, ideas, or thoughts",
     site: siteMetadata.twitter,
-    images: [{ url: siteMetadata.socialBanner }],
   },
 };

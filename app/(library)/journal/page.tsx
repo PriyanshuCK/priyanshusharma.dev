@@ -38,13 +38,7 @@ export const metadata: Metadata = {
     description: "An informal catalog of what I learn, do & observe everyday",
     url: siteMetadata.siteUrl + "journal",
     siteName: siteMetadata.title,
-    images: [
-      {
-        url: siteMetadata.socialBanner,
-        width: 1200,
-        height: 600,
-      },
-    ],
+
     locale: siteMetadata.locale,
     type: "website",
   },
@@ -53,6 +47,5 @@ export const metadata: Metadata = {
     title: "Journal",
     description: "An informal catalog of what I learn, do & observe everyday",
     site: siteMetadata.twitter,
-    images: [{ url: siteMetadata.socialBanner }],
   },
 };
