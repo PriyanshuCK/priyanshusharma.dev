@@ -10,16 +10,10 @@ const Pre = ({ children, caption }: any) => {
     Prism.highlightAll();
   }, []);
   return (
-    <div
-      className={`rounded-b-lg ${
-        caption ? "" : "rounded-t-lg"
-      } relative bg-gray-800 text-sm font-normal text-gray-200`}
-    >
-      <div className="overflow-x-auto px-4 py-3">
-        <pre className="language-cpp" tabIndex={0}>
-          <code className="language-cpp">{children}</code>
-        </pre>
-      </div>
+    <div className="children:my-0 children:!shadow-none children:bg-transparent">
+      <pre className="language-cpp" style={{ marginTop: 0, marginBottom: 0 }}>
+        <code className="language-cpp">{children}</code>
+      </pre>
     </div>
   );
 };
