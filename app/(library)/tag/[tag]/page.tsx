@@ -74,6 +74,7 @@ export async function generateMetadata(params: {
       title: title,
       description: description,
       site: siteMetadata.twitter,
+      images: [{ url: siteMetadata.socialBanner }],
     },
   };
 }

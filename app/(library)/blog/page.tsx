@@ -40,7 +40,13 @@ export const metadata: Metadata = {
       "A detailed account of my happenings, activities, beliefs, and thoughts",
     url: siteMetadata.siteUrl + "blog",
     siteName: siteMetadata.title,
-
+    images: [
+      {
+        url: siteMetadata.socialBanner,
+        width: 1200,
+        height: 600,
+      },
+    ],
     locale: siteMetadata.locale,
     type: "website",
   },
@@ -50,5 +56,6 @@ export const metadata: Metadata = {
     description:
       "A detailed account of my happenings, activities, beliefs, and thoughts",
     site: siteMetadata.twitter,
+    images: [{ url: siteMetadata.socialBanner }],
   },
 };

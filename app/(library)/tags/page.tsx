@@ -65,7 +65,13 @@ export const metadata: Metadata = {
     description: "Browse posts by tag",
     url: siteMetadata.siteUrl + "tags",
     siteName: siteMetadata.title,
-
+    images: [
+      {
+        url: siteMetadata.socialBanner,
+        width: 1200,
+        height: 600,
+      },
+    ],
     locale: siteMetadata.locale,
     type: "website",
   },
@@ -74,5 +80,6 @@ export const metadata: Metadata = {
     title: "Tags",
     description: "Browse posts by tag",
     site: siteMetadata.twitter,
+    images: [{ url: siteMetadata.socialBanner }],
   },
 };

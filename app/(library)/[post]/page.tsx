@@ -180,6 +180,13 @@ export async function generateMetadata(params: {
       description: description,
       url: siteMetadata.siteUrl + id,
       siteName: siteMetadata.title,
+      images: [
+        {
+          url: siteMetadata.socialBanner,
+          width: 1200,
+          height: 600,
+        },
+      ],
       locale: siteMetadata.locale,
       type: "website",
     },
@@ -188,6 +195,7 @@ export async function generateMetadata(params: {
       title: title,
       description: description,
       site: siteMetadata.twitter,
+      images: [{ url: siteMetadata.socialBanner }],
     },
     other: {
       published_time: created_time,

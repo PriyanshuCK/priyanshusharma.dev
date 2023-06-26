@@ -38,7 +38,13 @@ export const metadata: Metadata = {
     description: "Summary and takeaways of the non-fiction books I've read",
     url: siteMetadata.siteUrl + "notes",
     siteName: siteMetadata.title,
-
+    images: [
+      {
+        url: siteMetadata.socialBanner,
+        width: 1200,
+        height: 600,
+      },
+    ],
     locale: siteMetadata.locale,
     type: "website",
   },
@@ -47,5 +53,6 @@ export const metadata: Metadata = {
     title: "Book Notes",
     description: "Summary and takeaways of the non-fiction books I've read",
     site: siteMetadata.twitter,
+    images: [{ url: siteMetadata.socialBanner }],
   },
 };

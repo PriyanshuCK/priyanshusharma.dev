@@ -44,6 +44,13 @@ export const metadata: Metadata = {
     description: siteMetadata.description,
     url: siteMetadata.siteUrl,
     siteName: siteMetadata.title,
+    images: [
+      {
+        url: siteMetadata.socialBanner,
+        width: 1200,
+        height: 600,
+      },
+    ],
     locale: siteMetadata.locale,
     type: "website",
   },
@@ -52,6 +59,7 @@ export const metadata: Metadata = {
     title: siteMetadata.title,
     description: siteMetadata.description,
     site: siteMetadata.twitter,
+    images: [{ url: siteMetadata.socialBanner }],
   },
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#fff" },

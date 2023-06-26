@@ -34,7 +34,13 @@ export const metadata: Metadata = {
     description: "Browse all of the posts at one place",
     url: siteMetadata.siteUrl + "posts",
     siteName: siteMetadata.title,
-
+    images: [
+      {
+        url: siteMetadata.socialBanner,
+        width: 1200,
+        height: 600,
+      },
+    ],
     locale: siteMetadata.locale,
     type: "website",
   },
@@ -43,5 +49,6 @@ export const metadata: Metadata = {
     title: "All Posts",
     description: "Browse all of the posts at one place",
     site: siteMetadata.twitter,
+    images: [{ url: siteMetadata.socialBanner }],
   },
 };
