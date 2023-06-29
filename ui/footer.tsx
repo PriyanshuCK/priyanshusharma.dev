@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Icon from "@/ui/icon";
+import NewsletterForm from "@/ui/newsletter-form";
 let weekday = [
   "sunday",
   "monday",
@@ -48,6 +49,17 @@ const Footer = () => {
         </g>
       </svg>
       <footer className="z-10 bg-primary-50 p-4 dark:bg-gray-800 lg:p-6">
+        <div className="grid grid-cols-1 content-center gap-4 pt-6 pb-6 sm:grid-cols-2 sm:gap-0 sm:pt-0">
+          <div className="self-center px-8">
+            <p className="text-center leading-relaxed">
+              Subscribe to my newsletter, where I share my learnings from the
+              content I consume and valuable insights from the web.
+            </p>
+          </div>
+          <div className="self-center justify-self-center">
+            <NewsletterForm />
+          </div>
+        </div>
         <div className="mt-6">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
             <div className="col-span-2 flex w-full flex-col items-center justify-center md:col-span-4 lg:col-span-2">

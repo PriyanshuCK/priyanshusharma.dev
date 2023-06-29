@@ -35,6 +35,9 @@ const siteMetadata = {
       themeURL: "",
     },
   },
+  newsletter: {
+    provider: "convertkit",
+  },
 };
 
 module.exports = siteMetadata;
