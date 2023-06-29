@@ -22,7 +22,6 @@ export async function POST(req: Request, res: Response) {
       method: "POST",
     });
     const out = await response.json();
-    console.log(out);
 
     if (response.status >= 400) {
       return NextResponse.json(

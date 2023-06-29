@@ -30,10 +30,8 @@ const NewsletterForm = ({ title = "Subscribe to Thursday Thoughts" }) => {
       },
       method: "POST",
     });
-    console.log(res);
 
     const { error } = await res.json();
-    console.log(error);
     if (res.status != 200) {
       setError(true);
       return;
