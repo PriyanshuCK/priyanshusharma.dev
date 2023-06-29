@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import siteMetadata from "@/data/metadata";
+import NewsletterForm, { BlogNewsletterForm } from "@/ui/newsletter-form";
 export default async function newsletter() {
   return (
     <>
@@ -13,19 +14,17 @@ export default async function newsletter() {
             </div>
           </div>
         </header>
-        <div className="flex flex-col items-center py-10">
+        <div className="flex flex-col items-center py-10 max-w-xl mx-auto">
           <p className="text-center">
             Subscribe to my newsletter where I share my learnings and valuable
             insights from the content I consume.
           </p>
-          <iframe
-            className="my-6 h-40 rounded-2xl  md:mx-auto md:w-1/2"
-            src="https://priyanshuck.substack.com/embed"
-          ></iframe>
+          <div className="my-6">
+            <BlogNewsletterForm title="" />
+          </div>
           <p className="text-center">
             Each Thursday, you will receive an email from me featuring my
-            learnings of the week on a variety of topics, including personal
-            development, productivity, and self-improvement.
+            learnings of the week and progress of the undertaken tasks.
           </p>
         </div>
       </div>

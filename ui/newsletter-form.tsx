@@ -14,11 +14,13 @@ const NewsletterForm = ({ title = "Subscribe to Thursday Thoughts" }) => {
   const [error, setError] = useState(false);
   const [active, setActive] = useState(false);
   const [inactive, setInactive] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   function closeModal() {
     setIsOpen(false);
   }
 
   const subscribe = async (e: any) => {
+    setIsSubmitting(true);
     e.preventDefault();
 
     const res = await fetch(`/api/${siteMetadata.newsletter.provider}`, {
@@ -44,6 +46,9 @@ const NewsletterForm = ({ title = "Subscribe to Thursday Thoughts" }) => {
     } else {
       setActive(true);
     }
+    setTimeout(() => {
+      setIsSubmitting(false);
+    }, 2000);
   };
 
   return (
@@ -62,9 +67,7 @@ const NewsletterForm = ({ title = "Subscribe to Thursday Thoughts" }) => {
             id="email-input"
             name="email"
             placeholder={
-              active || inactive
-                ? "You're subscribed !  🎉"
-                : "Enter your email"
+              active || inactive ? "You're subscribed! 🎉" : "Enter your email"
             }
             ref={inputEl}
             required
@@ -82,9 +85,37 @@ const NewsletterForm = ({ title = "Subscribe to Thursday Thoughts" }) => {
             type="submit"
             disabled={active || inactive || error}
           >
-            {(active || inactive) && <>Thank You!</>}
-            {error && <>Please refresh & retry!</>}
-            {!(active || inactive || error) && <>Sign up</>}
+            {isSubmitting && !(active || inactive || error) ? (
+              <span className="flex flex-row justify-center">
+                <svg
+                  className="animate-spin h-5 w-5 text-primary-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+              </span>
+            ) : (
+              <>{!(active || inactive || error) && "Sign up"}</>
+            )}
+            {active || inactive
+              ? "Thank You!"
+              : error
+              ? "Please refresh & retry!"
+              : ""}
           </button>
         </div>
       </form>
@@ -144,8 +175,8 @@ const NewsletterForm = ({ title = "Subscribe to Thursday Thoughts" }) => {
                           <>
                             Thank you🤗 for being a valued member of Thursday
                             Thoughts! <br /> You&apos;re already an active
-                            subscriber of Thursday Thoughts. You&apos;ll
-                            continue to receive the weekly issues.
+                            subscriber of Thursday Thoughts and will continue to
+                            receive the weekly issues.
                           </>
                         )}
                       </p>
@@ -241,7 +272,7 @@ export default NewsletterForm;
 
 export const BlogNewsletterForm = (props: any) => (
   <div className="flex items-center justify-center">
-    <div className="bg-gray-100 p-6 dark:bg-gray-800 sm:px-14 sm:py-8">
+    <div className="">
       <NewsletterForm title={props.title} />
     </div>
   </div>
