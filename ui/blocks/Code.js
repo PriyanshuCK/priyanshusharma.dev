@@ -14,7 +14,7 @@ export default function Code({ rich_text, language, caption }) {
               <div className="flex-none text-[#7FDBCA] border-t border-b border-t-transparent border-b-[#7FDBCA] px-4 py-1 flex items-center">
                 {caption}
               </div>
-              <div class="flex-auto flex items-center bg-slate-700/50 border border-slate-500/30 rounded-tl"></div>
+              <div className="flex-auto flex items-center bg-slate-700/50 border border-slate-500/30 rounded-tl"></div>
             </div>
           ) : (
             ""
